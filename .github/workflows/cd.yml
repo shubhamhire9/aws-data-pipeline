@@ -5,8 +5,8 @@ on:
     branches: [ main ]
 
 env:
-  AWS_REGION: us-east-1                # Change to your region if different
-  ECR_REPOSITORY: aws-etl-pipeline     # Must match the ECR repo name you created
+  AWS_REGION: us-east-1
+  ECR_REPOSITORY: aws-etl-pipeline
 
 jobs:
   build:
@@ -27,6 +27,7 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Login to Amazon ECR
+        id: login-ecr                     # <-- ADD THIS LINE
         uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build, tag, and push image to Amazon ECR
