@@ -1,0 +1,18 @@
+# .dockerignore
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+.venv
+.git
+.gitignore
+.pytest_cache
+.coverage
+htmlcov
+tests/
+Dockerfile
+.dockerignore
+README.md
+poetry.lock       # we keep but not necessary if we copy it
